@@ -1,11 +1,11 @@
-import logo_icon from "./images/logo_menu.png";
-import logo from "./images/Logo_cellphones.png";
-import icon_phone from "./images/iconphone.png";
-import icon_GPS from "./images/GPS.png";
-import icon_car from "./images/iconcar.png";
-import icon_cart from "./images/cart.png";
-import icon_acount from "./images/acounticon.png";
-
+import logo_icon from "./images/logo_menu.svg";
+import logo from "./images/Logo_cellphones.svg";
+import icon_phone from "./images/iconphone.svg";
+import icon_GPS from "./images/GPS.svg";
+import icon_car from "./images/iconcar.svg";
+import icon_cart from "./images/cart.svg";
+import icon_acount from "./images/acounticon.svg";
+import icon_GPS_Area from "./images/GPS_AREA.svg"
 import styles from "./css/header.module.scss"
 import { FaLocationArrow, FaAngleDown,FaSearch } from "react-icons/fa";
 import { useState,createContext } from "react";
@@ -90,11 +90,14 @@ const Header = () => {
                       style={{
                         borderTopLeftRadius: "8px",
                         borderTopRightRadius: "8px",
-                        background: location == "Miền Bắc" ? "#FEE2E2" : "white",
+                        background:
+                          location == "Miền Bắc" ? "#FEE2E2" : "white",
                       }}
                     >
                       <span style={{ marginRight: "4px" }}>
-                        <FaLocationArrow style={{ fontSize: "12px" }} />
+                        <FaLocationArrow
+                          style={{ fontSize: "12px", color: "red" }}
+                        />
                       </span>
                       Miền bắc
                     </a>
@@ -107,11 +110,14 @@ const Header = () => {
                       style={{
                         borderBottomLeftRadius: "8px",
                         borderBottomRightRadius: "8px",
-                        background: location == "Miền Nam" ? "#FEE2E2" : "white",
+                        background:
+                          location == "Miền Nam" ? "#FEE2E2" : "white",
                       }}
                     >
                       <span style={{ marginRight: "4px" }}>
-                        <FaLocationArrow style={{ fontSize: "12px" }} />
+                        <FaLocationArrow
+                          style={{ fontSize: "12px", color: "red" }}
+                        />
                       </span>
                       Miền nam
                     </a>
@@ -160,8 +166,8 @@ const Header = () => {
                   <img className={styles.icon_menu} src={icon_phone} />
                 </div>
                 <div
-                  className="about__phone-content"
-                  style={{ lineHeight: "1.2" }}
+                  className="about__phone-content "
+                  style={{ lineHeight: "1.2", cursor: "pointer" }}
                 >
                   <p className={styles.title}>
                     Gọi mua hàng
@@ -179,7 +185,7 @@ const Header = () => {
                 </div>
                 <div
                   className="about__adress-content"
-                  style={{ lineHeight: "1.2" }}
+                  style={{ lineHeight: "1.2", cursor: "pointer" }}
                 >
                   <p className={styles.title}>
                     Cửa hàng
@@ -197,7 +203,7 @@ const Header = () => {
                 </div>
                 <div
                   className="about__info-content"
-                  style={{ lineHeight: "1.2" }}
+                  style={{ lineHeight: "1.2", cursor: "pointer" }}
                 >
                   <p className={styles.title}>
                     Tra cứu
@@ -215,7 +221,7 @@ const Header = () => {
                 </div>
                 <div
                   className="about__cart-content"
-                  style={{ lineHeight: "1.2" }}
+                  style={{ lineHeight: "1.2", cursor: "pointer" }}
                 >
                   <p className={styles.title}>
                     Giỏ
