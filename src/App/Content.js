@@ -245,9 +245,9 @@ const Content = () => {
             </div>
             <div className="box_product_sp">
               <div className="list_product">
-                <Product Data={samsung} />
-                <Product Data={iphone} />
-                <Product Data={xiaomi} />
+                <Product Data={samsung} name="samsung" />
+                <Product Data={iphone} name="iphone"/>
+                <Product Data={xiaomi} name="xiaomi"/>
               </div>
             </div>
           </div>

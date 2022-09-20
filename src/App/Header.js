@@ -10,6 +10,7 @@ import styles from "./css/header.module.scss"
 import { FaLocationArrow, FaAngleDown,FaSearch } from "react-icons/fa";
 import { useState,createContext } from "react";
 import Warpper from "./Warpper";
+import { Link } from "react-router-dom";
 export const WarpperContext = createContext();
 
 const Header = () => {
@@ -34,7 +35,9 @@ const Header = () => {
             style={{ lineHeight: "62px", height: "100%" }}
           >
             <img className={styles.icon_1} src={logo_icon} />
-            <img className={styles.logo_cellphons} src={logo} />
+            <Link to="/">
+              <img className={styles.logo_cellphons} src={logo} />
+            </Link>{" "}
           </div>
           <div className="col-md-1 p-0 " style={{ height: "100%" }}>
             <div className={styles.box_button_dropdown}>

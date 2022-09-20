@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaChevronRight, FaAngleUp, FaStar } from "react-icons/fa";
 
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,23 +10,31 @@ import "swiper/css/pagination";
 import "./css/list-product.scss";
 
 // import required modules
-import { Navigation} from "swiper";
+import { Navigation } from "swiper";
+import { useNavigate } from "react-router-dom";
 
-export default function Product({Data}) {
 
+export default function Product({ Data,name }) {
+    const navigate = useNavigate();
+  function handleDetail(idx,name) {
+    navigate(`/detail/${idx}?type=${name}`);
+  }
   return (
     <>
       <Swiper
         navigation={true}
         slidesPerView={5}
         spaceBetween={0}
-        
         modules={[Navigation]}
         className="mySwiper"
-      >{
-        Data.map((product,idx)=>{
+      >
+        {Data.data.map((product, idx) => {
           return (
-            <SwiperSlide key={idx} style={{ cursor: "pointer" }}>
+            <SwiperSlide
+              key={idx}
+              style={{ cursor: "pointer" }}
+              onClick={()=>{handleDetail(idx,name)}}
+            >
               <div id="300" className="list_item__product">
                 <div className="list_item__product_img">
                   <a>
@@ -69,10 +76,7 @@ export default function Product({Data}) {
               </div>
             </SwiperSlide>
           );
-        })
-      }
-      
-     
+        })}
       </Swiper>
     </>
   );
