@@ -1,0 +1,126 @@
+
+.list_menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.item_menu{
+    min-height: 31.3px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: 0 0;
+    cursor: pointer;
+    a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+    color: #343a40;
+    }
+    img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    }
+    span{
+    flex: 1;
+    font-size: 12px;
+    font-weight: 700;
+    color: #343a40;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    };
+    &:hover{
+        background-color: #F3F4F6;
+    }
+
+}
+
+.item_menu_child{
+     min-height: 31.3px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: 0 0;
+    cursor: pointer;
+
+    span{
+    flex: 1;
+    font-size: 12px;
+    font-weight: 700;
+    color: #343a40;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    };
+    &:hover{
+        background-color: #F3F4F6;
+    }
+}
+
+.banner{
+    margin-left: 13px;
+    width: 265px;
+    display: flex;
+    flex-direction: column;
+    a:not(:last-child){margin-bottom: 15.5px};
+    img{width: 100%;border-radius: 10px;};
+    a{border-radius: 10px;}
+}
+#block_banner_special_sale{
+    width: 1196px;
+    min-height: 75px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    a{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+.back_to_top{
+    width: 45px;
+    height:45px;
+    background-color: #E34C5D;
+    color: white;
+    font-weight: 700;
+    border-radius: 30px;
+    line-height: 38px;
+    text-align: center;
+    position: fixed;
+    bottom: 15%;
+    right: 2.5%;
+    font-size: 20px;
+    z-index: 9;
+    box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px;
+    cursor: pointer;
+
+}
+
+.btn_zalo_chat{
+    width: 68px;
+    height:45px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 6%;
+    right: 1.5%;
+    z-index: 9;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgb(2 143 227);
+ 
+    img{
+        width: 100%;
+        transition: opacity .3s;
+    }
+}

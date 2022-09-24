@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import "./css/slider.scss";
+import "./slider.scss";
 import {  Navigation} from "swiper";
 export default function Slide_product_sale({data}) {
   

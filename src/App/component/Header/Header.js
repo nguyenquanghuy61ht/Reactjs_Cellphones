@@ -1,12 +1,12 @@
-import logo_icon from "./images/logo_menu.svg";
-import logo from "./images/Logo_cellphones.svg";
-import icon_phone from "./images/iconphone.svg";
-import icon_GPS from "./images/GPS.svg";
-import icon_car from "./images/iconcar.svg";
-import icon_cart from "./images/cart.svg";
-import icon_acount from "./images/acounticon.svg";
-import icon_GPS_Area from "./images/GPS_AREA.svg"
-import styles from "./css/header.module.scss"
+import logo_icon from "../../images/logo_menu.svg";
+import logo from "../../images/Logo_cellphones.svg";
+import icon_phone from "../../images/iconphone.svg";
+import icon_GPS from "../../images/GPS.svg";
+import icon_car from "../../images/iconcar.svg";
+import icon_cart from "../../images/cart.svg";
+import icon_acount from "../../images/acounticon.svg";
+import icon_GPS_Area from "../../images/GPS_AREA.svg"
+import styles from "./header.module.scss"
 import { FaLocationArrow, FaAngleDown,FaSearch } from "react-icons/fa";
 import { useState,createContext } from "react";
 import Warpper from "./Warpper";

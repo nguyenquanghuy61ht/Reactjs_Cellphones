@@ -7,7 +7,7 @@ import { FaChevronRight, FaAngleUp, FaStar } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import "./css/list-product.scss";
+import "./list-product.scss";
 
 // import required modules
 import { Navigation } from "swiper";

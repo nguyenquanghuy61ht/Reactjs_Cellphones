@@ -1,24 +1,22 @@
 import React, { useCallback } from "react";
-import styles_content from "./css/content.module.scss";
-import { mobile,watch } from "./data/Data_sale";
-import "./css/content.scss";
-import { samsung,iphone,xiaomi } from "./data/data";
+import styles_content from "./content.module.scss";
+import { mobile, watch } from "../../../data/Data_sale";
+import "./content.scss";
+import { samsung, iphone, xiaomi } from "../../../data/data";
 import { FaChevronRight, FaAngleUp, FaStar } from "react-icons/fa";
-import {menuProduct} from './data/menu_Product'
-import flashsale from "./images/flashsale.png";
-import Slide from "./Slideshow";
-import Slide_product_sale from "./Slider_Product_Sale";
+import { menuProduct } from "../../../data/menu_Product";
+import flashsale from "../../../images/flashsale.png";
+import Slide from "../../Products/Slideshow";
+import Slide_product_sale from "../../Products/Slider_Product_Sale";
 import { useState, useEffect, useRef } from "react";
-import Product from "./List_product";
-import ListContentMenu from "./ListContentMenu";
-import {data} from "./data/Data_Content_Menu"
+import Product from "../../Products/List_product";
+import ListContentMenu from "../../Products/ListContentMenu";
+import { data } from "../../../data/Data_Content_Menu";
+import Footer from "../../../component/Footer/footer";
 
-
-const Content = () => {
+const Home = () => {
   const [change1, setChange1] = useState(true);
   const [change2, setChange2] = useState(false);
-
-
 
   const procerser_change1 = () => {
     setChange1(true);
@@ -83,10 +81,9 @@ const Content = () => {
     window.scrollTo(0, 0);
   }
 
-
   return (
     <div
-      className="container-fluid "
+      className="container-fluid p-0 "
       style={{ marginTop: "77px", height: "376px" }}
     >
       <div className="row mb-3">
@@ -103,7 +100,6 @@ const Content = () => {
             <ul className={styles_content.list_menu}>
               {menuProduct.map((element, idx) => (
                 <li
-                 
                   className={styles_content.item_menu}
                   key={idx}
                   id={element.className}
@@ -114,7 +110,7 @@ const Content = () => {
                     <FaChevronRight
                       style={{ fontSize: "11px", marginRight: "5px" }}
                     />
-                      <ListContentMenu data={data} />
+                    <ListContentMenu data={data} />
                   </a>
                 </li>
               ))}
@@ -129,7 +125,7 @@ const Content = () => {
             marginLeft: "-14px",
           }}
         >
-          <Slide></Slide>
+          <Slide />
         </div>
         <div className="col-md-3 ">
           <div className={styles_content.banner}>
@@ -206,7 +202,7 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row ">
         <div className="col-md-12">
           <div className="block_product_hot">
             <div className="box_hot_news">
@@ -246,14 +242,15 @@ const Content = () => {
             <div className="box_product_sp">
               <div className="list_product">
                 <Product Data={samsung} name="samsung" />
-                <Product Data={iphone} name="iphone"/>
-                <Product Data={xiaomi} name="xiaomi"/>
+                <Product Data={iphone} name="iphone" />
+                <Product Data={xiaomi} name="xiaomi" />
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
-export default Content;
+export default Home;

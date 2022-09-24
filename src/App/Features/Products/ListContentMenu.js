@@ -1,5 +1,5 @@
 import React from "react";
-import styles_content from "./css/content.module.scss";
+import styles_content from "./content.module.scss";
 
 function ListContentMenu({ data }) {
   return (
