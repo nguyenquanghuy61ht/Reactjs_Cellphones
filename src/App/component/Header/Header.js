@@ -5,18 +5,22 @@ import icon_GPS from "../../images/GPS.svg";
 import icon_car from "../../images/iconcar.svg";
 import icon_cart from "../../images/cart.svg";
 import icon_acount from "../../images/acounticon.svg";
-import icon_GPS_Area from "../../images/GPS_AREA.svg"
-import styles from "./header.module.scss"
-import { FaLocationArrow, FaAngleDown,FaSearch } from "react-icons/fa";
-import { useState,createContext } from "react";
+import styles from "./header.module.scss";
+import { FaLocationArrow, FaAngleDown, FaSearch } from "react-icons/fa";
+import { useState, createContext } from "react";
 import Warpper from "./Warpper";
 import { Link } from "react-router-dom";
+import { cartItemsCountSelector } from "../../Features/Cart/components/selector";
+import { useSelector } from "react-redux";
 export const WarpperContext = createContext();
 
 const Header = () => {
-
-  const [location,setLocation]=useState('Miền Bắc')
-  const [show,setShow]=useState(false)
+  const totalProduct = useSelector(cartItemsCountSelector);
+  const [location, setLocation] = useState("Miền Bắc");
+  const [show, setShow] = useState(false);
+  function handleDanhMuc() {
+    setShow(!show);
+  }
   return (
     <WarpperContext.Provider value={show}>
       {show && <Warpper hide={setShow}></Warpper>}
@@ -34,7 +38,11 @@ const Header = () => {
             className="col-md-3   "
             style={{ lineHeight: "62px", height: "100%" }}
           >
-            <img className={styles.icon_1} src={logo_icon} />
+            <img
+              onClick={handleDanhMuc}
+              className={styles.icon_1}
+              src={logo_icon}
+            />
             <Link to="/">
               <img className={styles.logo_cellphons} src={logo} />
             </Link>{" "}
@@ -215,13 +223,16 @@ const Header = () => {
                   </p>
                 </div>
               </a>
-              <a
+              <Link
                 className={styles.box_about__item}
                 style={{ alignItems: "center" }}
+                to="/cart"
               >
-                <div className="about__cart-icon">
+                <div className={styles.about__cart_icon}>
                   <img className={styles.icon_menu} src={icon_cart} />
+                  <span>{totalProduct}</span>
                 </div>
+
                 <div
                   className="about__cart-content"
                   style={{ lineHeight: "1.2", cursor: "pointer" }}
@@ -232,7 +243,8 @@ const Header = () => {
                     hàng
                   </p>
                 </div>
-              </a>
+              </Link>
+
               <a className={styles.box_about__Smember}>
                 <div className="about__Smember-icon text-center">
                   <img className={styles.icon_member} src={icon_acount} />
@@ -250,5 +262,3 @@ const Header = () => {
 };
 
 export default Header;
-
-

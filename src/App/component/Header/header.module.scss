@@ -1,68 +1,79 @@
- #row_header{
-    height:62px
- }
+#row_header {
+  height: 62px;
+}
 
- .icon_1 {
-     width: 30px;
-     height : 30px;
-     margin-left: 31px
- }
- .logo_cellphons{
-     width: 177px; 
-     height: 30px; 
-     margin-left:16px 
- }
- .box_button_dropdown{
-    height: 39px;
-    width: 121px;
-    margin-top: 12px;
-    background: #DF3346;
-    border-radius: 8px
- }
- .icon_GPS{
-    line-height: 39px;
-    margin-left: 3px;
-    margin-right: 5px
- }
- #input_group1{
-    margin-top: 11px;
-    margin-left: 30px;
-    width: 300px;
- }
- .icon_search{
-    width:25px;
-    background:#FFFFFF;
-    line-height:30px;
-    border-top-left-radius:10px;
-    border-bottom-left-radius:10px
- }
- .title{
-    font-size: 13px;
-    color: white;
-    margin: auto;
-    font-weight: 500;
-    margin: 0px 3px 0px 3px;
- }
- .icon_menu{
-     width: 27px; 
-     height: 27px;
-     margin-right: 3px;
- }
- .icon_member{
-      width: 23px; 
-     height: 22px;
-     
- }
- .box_about__Smember{
-     text-decoration:none;
-     border-radius: 10px;
-     background-color: #DF3346;
- }
- .box_about__item{
-     text-decoration: none;
-     display: flex;
-    &:hover{
-     background-color: #DF3346;
-     border-radius: 10px;
- }
- }
+.icon_1 {
+  width: 30px;
+  height: 30px;
+  margin-left: 31px;
+}
+.logo_cellphons {
+  width: 177px;
+  height: 30px;
+  margin-left: 16px;
+}
+.box_button_dropdown {
+  height: 39px;
+  width: 121px;
+  margin-top: 12px;
+  background: #df3346;
+  border-radius: 8px;
+}
+.icon_GPS {
+  line-height: 39px;
+  margin-left: 3px;
+  margin-right: 5px;
+}
+#input_group1 {
+  margin-top: 11px;
+  margin-left: 30px;
+  width: 300px;
+}
+.icon_search {
+  width: 25px;
+  background: #ffffff;
+  line-height: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.title {
+  font-size: 13px;
+  color: white;
+  margin: auto;
+  font-weight: 500;
+  margin: 0px 3px 0px 3px;
+}
+.icon_menu {
+  width: 27px;
+  height: 27px;
+  margin-right: 3px;
+}
+.about__cart_icon {
+  position: relative;
+  span {
+    position: absolute;
+    top: 58%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+  }
+}
+.icon_member {
+  width: 23px;
+  height: 22px;
+}
+.box_about__Smember {
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #df3346;
+}
+.box_about__item {
+  text-decoration: none;
+  display: flex;
+  &:hover {
+    background-color: #df3346;
+    border-radius: 10px;
+  }
+}

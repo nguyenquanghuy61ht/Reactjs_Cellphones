@@ -1,17 +1,42 @@
-import { Button, Grid, makeStyles, Paper, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Grid,
+  makeStyles,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 import Footer from "../../../component/Footer/footer";
 import { Data } from "../../../data/data";
 import "./styles.scss";
+import { addTocart } from "../../Cart/components/cartSlice";
 function Detail(props) {
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
   const { search } = useLocation();
   const match = search.match(/type=(.*)/);
   const type = match?.[1];
   const { productId } = useParams();
   const dataManufacturer = Data.filter((data) => data.type === type);
   const dataProduct = dataManufacturer[0].data[productId];
+  function handleQuantity(e) {
+    setQuantity(e.target.value);
+  }
+
+  function hadleAddToCart() {
+    const action = {
+      id: productId + type,
+      ...dataProduct,
+      quantity: Number(quantity),
+    };
+    console.log(action);
+    dispatch(addTocart(action));
+  }
 
   return (
     <>
@@ -48,10 +73,12 @@ function Detail(props) {
             </Stack>
             <Box className="space mt-4">
               <TextField
+                onChange={handleQuantity}
                 id="filled-number"
                 size="small"
                 label="Số lượng"
-                defaultValue={1}
+                InputProps={{ inputProps: { min: 1, max: 10 } }}
+                defaultValue={quantity}
                 type="number"
                 InputLabelProps={{
                   shrink: true,
@@ -65,14 +92,18 @@ function Detail(props) {
               </div>
             )}
             <Box color="danger" className="space">
-              <Button variant="contained" color="error" className="mt-2">
+              <Button
+                variant="contained"
+                color="error"
+                className="mt-2"
+                onClick={hadleAddToCart}
+              >
                 Thêm vào giỏ hàng
               </Button>
             </Box>
           </Box>
         </Grid>
       </Grid>
-
     </>
   );
 }

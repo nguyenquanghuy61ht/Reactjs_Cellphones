@@ -33,7 +33,7 @@ const Home = () => {
   const [timeSeconds, setTimeSeconds] = useState("00");
   let interval = useRef();
   const startTimer = () => {
-    const CountDownDate = new Date("september 25,2022 00:00:00").getTime();
+    const CountDownDate = new Date("september 29,2022 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = CountDownDate - now;
@@ -86,7 +86,7 @@ const Home = () => {
       className="container-fluid p-0 "
       style={{ marginTop: "77px", height: "376px" }}
     >
-      <div className="row mb-3">
+      <div className="row mb-3 row_slide ">
         {Showtop && (
           <div className={styles_content.back_to_top} onClick={Resettop}>
             <FaAngleUp></FaAngleUp>
@@ -141,7 +141,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row m-0">
         <div className="col-md-12 d-flex justify-content-center p-0">
           <div id={styles_content.block_banner_special_sale} className="shadow">
             <a>
@@ -150,7 +150,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="row m-0">
         <div className="col-md-12">
           <div className="flashsale block_hotsale shadow">
             <div className="block_hotsale__tab-menu">
@@ -202,7 +202,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="row ">
+      <div className="row m-0">
         <div className="col-md-12">
           <div className="block_product_hot">
             <div className="box_hot_news">
