@@ -9,18 +9,48 @@ import styles from "./header.module.scss";
 import { FaLocationArrow, FaAngleDown, FaSearch } from "react-icons/fa";
 import { useState, createContext } from "react";
 import Warpper from "./Warpper";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { cartItemsCountSelector } from "../../Features/Cart/components/selector";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Box, Button, IconButton, Paper, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import { CheckCircle } from "@mui/icons-material";
+import { hideMiniCart, showMiniCart } from "../../Features/Cart/components/cartSlice";
 export const WarpperContext = createContext();
-
+const useStyles = makeStyles((theme) => ({
+  popover: {
+    zIndex: 100,
+    minWidth: "100px",
+    position: "absolute",
+    top: "90%",
+    right: "70px",
+    padding: "10px",
+  },
+  title: {
+    display: "flex",
+    alignItems: "center",
+  },
+  Button: {
+    marginTop: "15px",
+    width: "100%",
+  },
+}));
 const Header = () => {
+  const navigate=useNavigate()
+  const showCart = useSelector((state) => state.cart.isShowCart);
+  const dispatch = useDispatch();
   const totalProduct = useSelector(cartItemsCountSelector);
   const [location, setLocation] = useState("Miền Bắc");
   const [show, setShow] = useState(false);
   function handleDanhMuc() {
     setShow(!show);
   }
+  const handleToCart = () => {
+    navigate("/cart");
+    dispatch(hideMiniCart());
+  };
+  const classes = useStyles();
+
   return (
     <WarpperContext.Provider value={show}>
       {show && <Warpper hide={setShow}></Warpper>}
@@ -244,6 +274,27 @@ const Header = () => {
                   </p>
                 </div>
               </Link>
+              {showCart && (
+                <Paper className={classes.popover}>
+                  <Box className={classes.title}>
+                    <IconButton>
+                      <CheckCircle color="success" />
+                    </IconButton>
+                    <Typography variant="body1">
+                      Thêm vào giỏ hàng thành công
+                    </Typography>
+                  </Box>
+                  <Button
+                    onClick={handleToCart}
+                    variant="contained"
+                    color="error"
+                    className={classes.Button}
+                    sx={{ fontSize: "12px" }}
+                  >
+                    Xem giỏ hàng và thanh toán
+                  </Button>
+                </Paper>
+              )}
 
               <a className={styles.box_about__Smember}>
                 <div className="about__Smember-icon text-center">

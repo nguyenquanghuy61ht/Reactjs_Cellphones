@@ -1,0 +1,167 @@
+.Box-Cart {
+  position: absolute;
+  top: 90px;
+  .Box-Cart2 {
+    margin: auto;
+    .Box-Cart__header {
+      display: flex;
+      padding: 0 !important;
+      .Back {
+        display: flex;
+        cursor: pointer;
+        p {
+          color: #d70018;
+          font-size: 17px;
+          font-weight: 600;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .title {
+        margin: auto;
+        p {
+          font-size: 17px;
+          color: #d70018;
+          font-weight: 600;
+        }
+      }
+    }
+    .Box-Cart__product {
+      margin: 15px;
+      position: relative;
+      padding: 15px;
+      margin-top: 20px;
+      display: flex;
+      border-radius: 15px;
+
+      .image {
+        padding: 5px 10px;
+        img {
+          width: 170px;
+          height: 180px;
+        }
+      }
+      .Detail {
+        padding: 0 20px;
+        .title-box {
+          display: flex;
+          justify-content: space-between;
+          p {
+            font-size: 17px;
+            font-weight: 600;
+          }
+          .iconClose {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            color: #969c9c;
+            cursor: pointer;
+          }
+        }
+        .price {
+          display: flex;
+          p {
+            margin-right: 6px;
+          }
+          .new {
+            font-size: 15px;
+            color: #d70018;
+            font-weight: 700;
+          }
+          .old {
+            font-size: 14px;
+            color: #777;
+            text-decoration: line-through;
+          }
+          span {
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 3px;
+            color: white;
+            background-color: #d70018;
+          }
+        }
+        .numberProduct {
+          margin-top: 10px;
+          display: flex;
+          p {
+            font-weight: 400;
+          }
+          .inputBox {
+            padding: 2px;
+            border: 1px solid #dddddd;
+            font-size: 13px;
+            border-radius: 3px;
+            margin-left: 5px;
+            span {
+              margin: 0 13px;
+            }
+            svg {
+              font-size: 15px;
+              cursor: pointer;
+            }
+          }
+        }
+        .infoSale {
+          margin-top: 12px;
+          padding: 10px 5px;
+          background-color: #f6f6f6;
+          border-radius: 10px;
+          p {
+            font-weight: 400;
+          }
+          ul {
+            padding: 0;
+            li {
+              list-style: none;
+              &::before {
+                content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+                color: #d70018; /* Change the color */
+                font-weight: bold; /* If you want it to be bold */
+                display: inline-block; /* Needed to add space between the bullet and the text */
+              }
+            }
+          }
+        }
+      }
+    }
+    .Box-Cart__Pay {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 12px;
+      .totalPrice {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+        p{
+            font-weight: 600;
+        }
+        .price{
+            font-weight: 700;
+            color: #D70018;
+        }
+      }
+      .btnOder {
+        padding: 20px;
+        width: 100%;
+        margin-bottom: 7px;
+        font-weight: 600;
+      }
+      .addProductdiff {
+        padding: 20px;
+        width: 100%;
+        font-weight: 600;
+
+        &:hover {
+          background-color: #dc3545;
+          color: #ffff;
+        }
+      }
+    }
+  }
+}

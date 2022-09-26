@@ -1,4 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
+import { Format } from "../../../Hook/fomatPrice";
 const cartItemSelector = (state) => state.cart.cartItems;
 //count number of product in cart
 export const cartItemsCountSelector = createSelector(
@@ -9,7 +10,7 @@ export const cartItemsCountSelector = createSelector(
 // calculate  total of cart
 export const cartTotalSelector = createSelector(cartItemSelector, (cartItems) =>
   cartItems.reduce((total, item) => {
-    var price = item.price.newPrice;
-    return total + price * item.quantity;
+    const str = Format(item.price.newPrice);
+    return total + Number(str) * item.quantity;
   }, 0)
 );

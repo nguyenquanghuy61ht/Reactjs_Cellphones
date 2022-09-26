@@ -88,11 +88,11 @@ const images = [
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper list_title"
+        className="mySwiper list_title "
       >
         {images.map((element1, idx1) => {
           return (
-            <SwiperSlide key={idx1}>
+            <SwiperSlide key={idx1} className="slide_hover" style={{cursor:"pointer"}}>
               {element1.title_top}
               <br />
               {element1.title_bottom}

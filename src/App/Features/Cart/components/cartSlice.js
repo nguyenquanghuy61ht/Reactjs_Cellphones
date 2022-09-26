@@ -4,14 +4,21 @@ import storageKeys from "../../../constants/storageKeys";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
+    isShowCart: false,
     cartItems: JSON.parse(localStorage.getItem(storageKeys.PRODUCT)) || [],
   },
   reducers: {
+    showMiniCart(state) {
+      state.isShowCart = true;
+    },
+    hideMiniCart(state) {
+      state.isShowCart = false;
+    },
     addTocart(state, action) {
       const newItem = action.payload;
       const index = state.cartItems.findIndex((x) => newItem.id === x.id);
       if (index >= 0) {
-        state.cartItems[index].quantity += newItem.quantity ;
+        state.cartItems[index].quantity += newItem.quantity;
         localStorage.setItem(
           storageKeys.PRODUCT,
           JSON.stringify(state.cartItems)
@@ -47,5 +54,6 @@ const cartSlice = createSlice({
 });
 
 const { actions, reducer } = cartSlice;
-export const { addTocart, setQuantity, removeFormCart } = actions;
+export const { hideMiniCart, showMiniCart, addTocart, setQuantity, removeFormCart } =
+  actions;
 export default reducer; //default export

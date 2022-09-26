@@ -14,7 +14,7 @@ import { useLocation, useParams } from "react-router-dom";
 import Footer from "../../../component/Footer/footer";
 import { Data } from "../../../data/data";
 import "./styles.scss";
-import { addTocart } from "../../Cart/components/cartSlice";
+import { addTocart, hideMiniCart, showMiniCart } from "../../Cart/components/cartSlice";
 function Detail(props) {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
@@ -28,14 +28,20 @@ function Detail(props) {
     setQuantity(e.target.value);
   }
 
-  function hadleAddToCart() {
+  async function hadleAddToCart() {
     const action = {
       id: productId + type,
       ...dataProduct,
       quantity: Number(quantity),
     };
     console.log(action);
-    dispatch(addTocart(action));
+    await dispatch(addTocart(action));
+    await dispatch(showMiniCart());
+    (() => {
+      setTimeout(() => {
+        dispatch(hideMiniCart());
+      }, 5000);
+    })();
   }
 
   return (

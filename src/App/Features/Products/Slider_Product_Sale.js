@@ -54,7 +54,7 @@ export default function Slide_product_sale({data}) {
           {
             data.map((product,indx )=>{
               return (
-                <SwiperSlide key={indx}>
+                <SwiperSlide key={indx} style={{cursor:'pointer'}}>
                   <div className="item__product_img">
                     <a>
                       <img src={product.image} />
