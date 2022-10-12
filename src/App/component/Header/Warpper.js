@@ -1,6 +1,4 @@
 import { memo, useContext } from "react";
-import ListContentMenu from "../../Features/Products/ListContentMenu";
-import { data } from "../../data/Data_Content_Menu";
 import { WarpperContext } from "./Header";
 const Warpper = ({ hide }) => {
   const value = useContext(WarpperContext);

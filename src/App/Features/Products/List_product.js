@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaChevronRight, FaAngleUp, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css";

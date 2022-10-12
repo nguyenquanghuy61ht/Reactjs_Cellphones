@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -6,9 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./slider.scss";
-import {  Navigation} from "swiper";
-export default function Slide_product_sale({data}) {
-  
+import { Navigation } from "swiper";
+import { useNavigate } from "react-router-dom";
+export default function Slide_product_sale({ data, name }) {
+
   return (
     <>
       <div className="slide_product">
@@ -21,7 +22,6 @@ export default function Slide_product_sale({data}) {
             borderTopRightRadius: "10px",
             borderTopLeftRadius: "10px",
           }}
-         
           navigation={true}
           modules={[Navigation]}
           slidesPerView={1}
@@ -51,38 +51,39 @@ export default function Slide_product_sale({data}) {
           }}
           className="mySwiper swiper_product"
         >
-          {
-            data.map((product,indx )=>{
-              return (
-                <SwiperSlide key={indx} style={{cursor:'pointer'}}>
-                  <div className="item__product_img">
-                    <a>
-                      <img src={product.image} />
-                    </a>
-                  </div>
-                  <div className="item__product_sticker">
-                    <p>{product.salePrice}</p>
-                  </div>
-                  <div className="item__product_name">
-                    <a>
-                      <p>{product.name}</p>
-                    </a>
-                  </div>
-                  <div className="item__product_price">
-                    <p className="specical_price">
-                      {product.price.newPrice}&nbsp;đ
-                    </p>
-                    <p className="old_price">{product.price.oldPrice}&nbsp;đ</p>
-                  </div>
-                </SwiperSlide>
-              );
-            })
-          }
-
-
+          {data.map((product, indx) => {
+            return (
+              <SwiperSlide
+                key={indx}
+                style={{ cursor: "pointer" }}
+                // onClick={() => {
+                //   handleDetail(indx, name);
+                // }}
+              >
+                <div className="item__product_img">
+                  <a>
+                    <img src={product.image} />
+                  </a>
+                </div>
+                <div className="item__product_sticker">
+                  <p>{product.salePrice}</p>
+                </div>
+                <div className="item__product_name">
+                  <a>
+                    <p>{product.name}</p>
+                  </a>
+                </div>
+                <div className="item__product_price">
+                  <p className="specical_price">
+                    {product.price.newPrice}&nbsp;đ
+                  </p>
+                  <p className="old_price">{product.price.oldPrice}&nbsp;đ</p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </>
   );
 }
-

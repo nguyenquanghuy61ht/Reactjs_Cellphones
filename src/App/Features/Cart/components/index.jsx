@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import "./styles.scss";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import CartItems from "../boxLayout";

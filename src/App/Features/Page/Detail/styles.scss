@@ -2,6 +2,19 @@
   .img-detail {
     width: 300px;
   }
+  .Back {
+    display: flex;
+    cursor: pointer;
+    padding-left: 55px;
+    p {
+      color: #d70018;
+      font-size: 17px;
+      font-weight: 600;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
   .detail-box-price {
     padding: 25px 25px;
     .text-title {

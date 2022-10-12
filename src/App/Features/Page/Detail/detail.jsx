@@ -1,21 +1,21 @@
-import {
-  Button,
-  Grid,
-  makeStyles,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Footer from "../../../component/Footer/footer";
+import { mobile, watch } from "../../../data/Data_sale";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Data } from "../../../data/data";
 import "./styles.scss";
-import { addTocart, hideMiniCart, showMiniCart } from "../../Cart/components/cartSlice";
+import {
+  addTocart,
+  hideMiniCart,
+  showMiniCart,
+} from "../../Cart/components/cartSlice";
 function Detail(props) {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const { search } = useLocation();
@@ -52,6 +52,26 @@ function Detail(props) {
         spacing={2}
         className="detail-box"
       >
+        <Grid item md={12} className="Box-Cart__header">
+          <Box className="Back" onClick={() => navigate(-1)}>
+            <Typography
+              variant="subtitle2"
+              component="span"
+              className="icon_Back"
+            >
+              <ArrowBackIosIcon
+                style={{
+                  fontSize: "1.1rem",
+                  marginTop: "6px",
+                  color: "#D70018",
+                }}
+              />
+            </Typography>
+            <Typography variant="subtitle1" component="p">
+              Trở về
+            </Typography>
+          </Box>
+        </Grid>
         <Grid item xs={6} md={4}>
           <Box component="div">
             <img
@@ -110,6 +130,7 @@ function Detail(props) {
           </Box>
         </Grid>
       </Grid>
+     
     </>
   );
 }

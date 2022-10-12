@@ -9,13 +9,13 @@ import styles from "./header.module.scss";
 import { FaLocationArrow, FaAngleDown, FaSearch } from "react-icons/fa";
 import { useState, createContext } from "react";
 import Warpper from "./Warpper";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cartItemsCountSelector } from "../../Features/Cart/components/selector";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Button, IconButton, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { CheckCircle } from "@mui/icons-material";
-import { hideMiniCart, showMiniCart } from "../../Features/Cart/components/cartSlice";
+import { hideMiniCart } from "../../Features/Cart/components/cartSlice";
 export const WarpperContext = createContext();
 const useStyles = makeStyles((theme) => ({
   popover: {

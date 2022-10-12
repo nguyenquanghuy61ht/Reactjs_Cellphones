@@ -1,9 +1,9 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styles_content from "./content.module.scss";
 import { mobile, watch } from "../../../data/Data_sale";
 import "./content.scss";
 import { samsung, iphone, xiaomi } from "../../../data/data";
-import { FaChevronRight, FaAngleUp, FaStar } from "react-icons/fa";
+import { FaChevronRight, FaAngleUp } from "react-icons/fa";
 import { menuProduct } from "../../../data/menu_Product";
 import flashsale from "../../../images/flashsale.png";
 import Slide from "../../Products/Slideshow";
@@ -33,7 +33,7 @@ const Home = () => {
   const [timeSeconds, setTimeSeconds] = useState("00");
   let interval = useRef();
   const startTimer = () => {
-    const CountDownDate = new Date("september 29,2022 00:00:00").getTime();
+    const CountDownDate = new Date("october 20,2022 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = CountDownDate - now;
@@ -196,8 +196,8 @@ const Home = () => {
               </div>
             </div>
             <div className="block_hotsale__product">
-              {change1 && <Slide_product_sale data={mobile} />}
-              {change2 && <Slide_product_sale data={watch} />}
+              {change1 && <Slide_product_sale data={mobile} name="mobile" />}
+              {change2 && <Slide_product_sale data={watch} name="watch" />}
             </div>
           </div>
         </div>
