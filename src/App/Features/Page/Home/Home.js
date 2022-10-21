@@ -33,7 +33,7 @@ const Home = () => {
   const [timeSeconds, setTimeSeconds] = useState("00");
   let interval = useRef();
   const startTimer = () => {
-    const CountDownDate = new Date("october 20,2022 00:00:00").getTime();
+    const CountDownDate = new Date("october 25,2022 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = CountDownDate - now;
